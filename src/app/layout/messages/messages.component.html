@@ -1,0 +1,28 @@
+<div class="my-5">
+  <div class="flex items-center justify-between mb-4">
+    <h5 class="text-blue-950 text-xl font-bold">Messages</h5>
+    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+      View all
+    </a>
+  </div>
+  <div class="flow-root">
+    <ul role="list">
+      <li *ngFor="let messager of messages" class="py-3 sm:py-4">
+        <div class="flex items-center space-x-4">
+          <div
+            class="flex-shrink-0 w-16 h-16 flex justify-center items-center rounded-full border-solid border-2 border-sky-300">
+            <img class="w-14 h-14 rounded-full" src="{{messager.imgSrc}}" alt="Neil image">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate">
+              {{messager.name}}
+            </p>
+            <p *ngIf="messager.firstMsg" class="text-sm text-gray-500 truncate dark:text-gray-400">
+              {{messager.firstMsg.length > 25 ? messager.firstMsg.slice(0, 25) + '...' :messager.firstMsg }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="flex justify-center flex-wrap gap-8">
+  <div *ngFor="let status of statusInfo"
+    class="max-w-sm h-[210px] p-6 mb-5 bg-white border border-gray-200 rounded-2xl grow">
+    <div class="flex justify-around items-center gap-5 mb-4">
+      <div class="flex justify-center items-center rounded-full bg-gray-100 w-[34px] h-[34px] ">
+        <i class="{{status.icon}} text-gray-400 text-base font-medium"></i>
+      </div>
+      <p class="text-gray-400 text-base font-medium">{{status.title}}</p>
+      <p class="text-stone-900 text-[22px] font-bold">{{status.statusNo | needZero}}</p>
+    </div>
+    <hr>
+
+    <div class="flex justify-between mt-4">
+
+      <div>
+        <ng-container *ngIf="status.status !== 'up'; else blue">
+          <ng-container *ngIf="status.status === 'down'; else babyblue">
+            <img src="../../../assets/media/status/red curved line.png" alt="status">
+          </ng-container>
+        </ng-container>
+      </div>
+
+      <ng-template #blue>
+        <img src="../../../assets/media/status/blue curved line.png" alt="status">
+      </ng-template>
+
+      <ng-template #babyblue>
+        <img src="../../../assets/media/status/baby blue curved line.png" alt="status">
+      </ng-template>
+
+      <div>
+        <p class="flex justify-end">
+          <span class="{{status.status === 'up'? 'text-lime-700'
+          :status.status === 'down'?'down': 'text-primary'}} text-base font-bold mr-1">{{status.status === 'up'? '+' +
+            status.statusPR
+            :status.status === 'down'?'-' + status.statusPR: status.statusPR | needZero}}</span>
+          <span class="text-slate-500 text-base font-medium">more</span>
+        </p>
+        <p class="text-slate-500 text-base font-medium">from last week</p>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.chart-btn,
+.active {
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+.active {
+  color: #1EA7FF;
+}
+
+.chart-btn:hover {
+  color: #1EA7FF;
+}
+
+.chart-btn::after {
+  display: none;
+}
+
+.active::after {
+  display: block;
+}
+
+.chart-btn::after,
+.active::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #1EA7FF;
+  bottom: 0;
+  left: 20%;
+  transform: translateX(50, 50);
+}
+
+.chart-btn:hover:after {
+  display: block;
+}

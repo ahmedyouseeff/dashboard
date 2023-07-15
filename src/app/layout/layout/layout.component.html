@@ -1,0 +1,11 @@
+<div class="flex w-full h-full">
+  <app-l-sidebar (onToggleSideNav)="onToggleSideNav($event)"></app-l-sidebar>
+
+  <div class="w-full flex-col">
+    <app-navbar></app-navbar>
+    <div class="flex flex-row justify-center body" [ngClass]="getBodyClass()">
+      <app-main-content class="basis-full"></app-main-content>
+      <app-r-sidebar *ngIf="!isSideNavCollapsed"></app-r-sidebar>
+    </div>
+  </div>
+</div>

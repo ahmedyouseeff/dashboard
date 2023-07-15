@@ -1,0 +1,18 @@
+<div class="bg-white p-6 mt-4 rounded-2xl">
+  <div class="flex justify-between items-center mx-4 mb-4">
+    <div class="text-blue-950 text-2xl font-bold">Task Done</div>
+
+    <div class="buttons">
+      <button class="chart-btn font-medium text-blue-950">Daily</button>
+      <button class="chart-btn font-medium text-blue-950">Weekly</button>
+      <button class="chart-btn font-medium text-blue-950 active">Monthly</button>
+    </div>
+
+  </div>
+  <div id="chart">
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip"
+      [dataLabels]="chartOptions.dataLabels" [markers]="chartOptions.markers" [legend]="chartOptions.legend"
+      [colors]="chartOptions.colors"></apx-chart>
+  </div>
+</div>
